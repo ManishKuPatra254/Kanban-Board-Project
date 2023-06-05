@@ -1,23 +1,43 @@
 .main_upper_bar_container {
-    border: 5px solid salmon;
+    /* border: 5px solid salmon; */
     width: 100%;
     height: 12%;
+    display: flex;
+    align-items: center;
 }
 
 .sub_upper_bar_container {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    margin: auto;
     gap: 11px;
-    border: 1px solid green;
+    /* border: 1px solid green; */
     width: 100%;
     height: 100%;
 }
 
 .input_nav {
     height: 2.5rem;
-    /* border: none; */
+    background: transparent;
+    border: 1px solid transparent;
+    outline: none;
+    color: white;
+    font-size: 15px;
+    text-align: center;
+    font-weight: bolder;
+    border-radius: 3px;
+    transition: .2s ease-in-out;
+}
+
+.input_nav::placeholder {
+    opacity: .5;
+    color: antiquewhite;
+}
+
+.input_nav:hover {
+    transition: .2s ease-in-out;
+    border: 1px solid gainsboro;
+
 }
 
 .work_shop_nav {
@@ -26,6 +46,7 @@
     display: flex;
     border-radius: 5px;
     border: transparent;
+    color: whitesmoke;
     padding: 6px 15px;
     font-weight: bold;
     transition: .2s ease-in-out;
@@ -33,7 +54,7 @@
 
 .work_shop_nav:hover {
     transition: .2s ease-in-out;
-    background-color: rgb(209, 234, 255);
+    background-color: rgba(247, 251, 255, 0.3);
 }
 
 /* ................................ */
@@ -52,20 +73,118 @@
 
 .board_nav_part:hover {
     transition: .2s ease-in-out;
-    background-color: rgb(209, 234, 255);
+    background-color: rgb(215, 215, 215);
     color: black;
 }
 
 /* ..................................... */
 
+
+.second_part_nav_bar {
+    position: relative;
+    left: 15%;
+    gap: 12px;
+    display: flex;
+}
+
 .power_ups {
     cursor: pointer;
     gap: 5px;
+    border: 1px solid red;
     display: flex;
     justify-content: space-around;
     border-radius: 5px;
+    color: white;
     border: transparent;
     padding: 6px 15px;
     font-weight: bold;
+    background-color: transparent;
     transition: .2s ease-in-out;
+}
+
+.power_ups:hover {
+    transition: .2s ease-in-out;
+    background-color: rgba(247, 251, 255, 0.3);
+}
+
+/* .......................................... */
+
+.automation_part {
+    cursor: pointer;
+    gap: 5px;
+    border: 1px solid red;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 5px;
+    color: white;
+    border: transparent;
+    padding: 6px 15px;
+    font-weight: bold;
+    background-color: transparent;
+    transition: .2s ease-in-out;
+}
+
+.automation_part:hover {
+    transition: .2s ease-in-out;
+    background-color: rgba(247, 251, 255, 0.3);
+}
+
+.filter_part {
+    cursor: pointer;
+    gap: 5px;
+    border: 1px solid red;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 5px;
+    color: white;
+    border: transparent;
+    padding: 6px 15px;
+    font-weight: bold;
+    background-color: transparent;
+    transition: .2s ease-in-out;
+}
+
+.filter_part:hover {
+    transition: .2s ease-in-out;
+    background-color: rgba(247, 251, 255, 0.3);
+}
+
+.share_options {
+    cursor: pointer;
+    gap: 5px;
+    border: 1px solid red;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 5px;
+    color: rgb(0, 0, 0);
+    border: transparent;
+    padding: 6px 15px;
+    font-weight: bold;
+    background-color: rgb(215, 215, 215);
+    transition: .2s ease-in-out;
+}
+
+.share_options:hover {
+    transition: .2s ease-in-out;
+    background-color: rgb(255, 255, 255);
+}
+
+.side_options {
+    cursor: pointer;
+    gap: 5px;
+    border: 1px solid red;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 5px;
+    color: rgb(255, 255, 255);
+    border: transparent;
+    padding: 6px 15px;
+    font-weight: bold;
+    background-color: transparent;
+    transition: .2s ease-in-out;
+}
+
+.side_options:hover {
+    transition: .2s ease-in-out;
+    background-color: rgb(255, 137, 137);
 }
