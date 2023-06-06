@@ -47,7 +47,7 @@ export function UpperNavBar() {
             <div className={Styles.main_upper_bar_container}>
                 <div className={Styles.sub_upper_bar_container}>
                     <input type="text" className={Styles.input_nav} placeholder='ENTER THE NAME' />
-                    <p onClick={handleClickStar}>{starFilled ? <StarIcon sx={{ color: 'yellow', cursor: 'pointer' }} /> : <StarBorderIcon />}</p>
+                    <p onClick={handleClickStar}>{starFilled ? <StarIcon sx={{ color: 'yellow', cursor: 'pointer' }} /> : <StarBorderIcon sx={{ color: 'white' }} />}</p>
                     <div className={Styles.work_shop_nav}>
                         <p><PeopleAltOutlinedIcon /></p>
                         <span>Workspace visible</span>

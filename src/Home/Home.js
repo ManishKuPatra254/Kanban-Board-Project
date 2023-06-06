@@ -1,6 +1,6 @@
 import { Fragment } from 'react'
 import Styles from './Home.module.css'
-import BackgroundImage from '../All Images/Images/BackgroundHome.jpg'
+import BackgroundImage from '../All Images/Images/back2.jpg'
 import { UpperNavBar } from '../Main/UpperNavBar/UpperNavBar'
 import { AddList } from '../Main/MiddleAddSection/AddList'
 
@@ -16,8 +16,7 @@ export function Home() {
                     height: '100vh',
                     backgroundSize: 'cover',
                     objectFit: 'cover'
-                }}
-            >
+                }}>
                 <UpperNavBar />
                 <AddList/>
 

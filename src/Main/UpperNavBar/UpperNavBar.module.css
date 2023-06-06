@@ -30,8 +30,8 @@
 }
 
 .input_nav::placeholder {
-    opacity: .5;
-    color: antiquewhite;
+    opacity: .8;
+    color: rgb(255, 255, 255);
 }
 
 .input_nav:hover {
