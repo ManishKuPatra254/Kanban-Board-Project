@@ -6,6 +6,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import { StyledColumn } from './StyleList';
 
 
+
 export function Addsection (){
 
     const[newList,setNewList]=useState();
@@ -19,6 +20,7 @@ export function Addsection (){
                 <Grid item xs={4}>
                    <StyledColumn>
                 <div className={style.input_text}>
+                  {/* <p className={style.heading_list}>To do.</p> */}
                     <TextField placeholder='Enter list title...' value={newList} sx={{width:'90%'}}
                     onChange={(e) => setNewList(e.target.value)} size='small'/>
                 </div>
