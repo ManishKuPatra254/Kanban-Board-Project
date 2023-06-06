@@ -2,8 +2,7 @@ import { Fragment } from 'react'
 import Styles from './Home.module.css'
 import BackgroundImage from '../All Images/Images/BackgroundHome.jpg'
 import { UpperNavBar } from '../Main/UpperNavBar/UpperNavBar'
-import { Addsection } from '../Main/MiddleAddSection/MiddleAddSection'
-// import { MainAddList } from '../Main/MiddleAddSection/MainAddList'
+import { AddList } from '../Main/MiddleAddSection/AddList'
 
 
 export function Home() {
@@ -20,9 +19,7 @@ export function Home() {
                 }}
             >
                 <UpperNavBar />
-                {/* <MainAddList/> */}
-                <Addsection/>
-                
+                <AddList/>
 
             </div>
         </Fragment>

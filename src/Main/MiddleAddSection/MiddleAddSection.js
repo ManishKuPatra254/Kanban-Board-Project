@@ -4,13 +4,27 @@ import {Grid,TextField,Button,IconButton} from '@mui/material';
 import AddIcon from "@mui/icons-material/Add";
 import CloseIcon from "@mui/icons-material/Close";
 import { StyledColumn } from './StyleList';
+import { addList } from '../../Store/Slice';
+import { useDispatch } from 'react-redux';
+
 
 
 
 export function Addsection (){
 
-    const[newList,setNewList]=useState();
+    const[newList,setNewList]=useState ('');
     const[displayaddList,setDisplayAddList]=useState();
+    const dispatch=useDispatch();
+
+    const submithandler = (e) => {
+      e.preventDefault();
+      dispatch(addList({id:Math.random(),title: newList}))
+      console.log("newList",newList);
+    }
+
+    const updateList = (e) => {
+      setNewList(e.target.value);
+    }
 
     return(
         <Fragment>
@@ -19,12 +33,13 @@ export function Addsection (){
                     {displayaddList ? (
                 <Grid item xs={4}>
                    <StyledColumn>
-                <div className={style.input_text}>
-                  {/* <p className={style.heading_list}>To do.</p> */}
+                {/* <div className={style.input_text}> */}
+                <form onSubmit={submithandler}>
                     <TextField placeholder='Enter list title...' value={newList} sx={{width:'90%'}}
-                    onChange={(e) => setNewList(e.target.value)} size='small'/>
-                </div>
-                <Button sx={{marginTop:'20px'}} variant='contained' startIcon={<AddIcon/>}
+                    onChange={updateList} size='small'/>
+                    </form>
+                {/* </div> */}
+                <Button sx={{marginTop:'20px'}} onClick={submithandler} variant='contained' startIcon={<AddIcon/>}
                  >
                   Add List</Button>
                 <IconButton sx={{marginTop:'20px'}} size='small'
