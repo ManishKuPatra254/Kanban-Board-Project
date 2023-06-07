@@ -1,16 +1,22 @@
 
 import './App.css';
-import {Home} from './Home/Home';
-import { Provider } from 'react-redux';
-import store from './Store/Store';
+import { DescriptionPg } from './DescriptionPage/DescriptionPg';
+import { Home } from './Home/Home';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <Provider store={store}>
+   
     <div className="App">
-      <Home />
+
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='*' element={<DescriptionPg />} />
+        </Routes>
+      </BrowserRouter>
     </div>
-    </Provider>
+  
   );
 }
 
