@@ -4,7 +4,7 @@ import StarBorderIcon from '@mui/icons-material/StarBorder';
 import StarIcon from '@mui/icons-material/Star';
 import PeopleAltOutlinedIcon from '@mui/icons-material/PeopleAltOutlined';
 import ViewStreamOutlinedIcon from '@mui/icons-material/ViewStreamOutlined';
-import RocketLaunchOutlinedIcon from '@mui/icons-material/RocketLaunchOutlined';
+import SettingsSuggestOutlinedIcon from '@mui/icons-material/SettingsSuggestOutlined';
 import BoltOutlinedIcon from '@mui/icons-material/BoltOutlined';
 import FilterListOutlinedIcon from '@mui/icons-material/FilterListOutlined';
 import Button from '@mui/material/Button';
@@ -15,7 +15,7 @@ import Stack from '@mui/material/Stack';
 import image from '../../All Images/Images/836-removebg-preview (1).png'
 import PersonAddAltOutlinedIcon from '@mui/icons-material/PersonAddAltOutlined';
 
-export function UpperNavBar() {
+export function UpperNavBar(props) {
 
     const [starFilled, setStarFilled] = useState(false)
 
@@ -79,8 +79,8 @@ export function UpperNavBar() {
                     <div className={Styles.second_part_nav_bar}>
 
                         <div className={Styles.power_ups}>
-                            <p><RocketLaunchOutlinedIcon /></p>
-                            <p>Power-Ups</p>
+                            <p><SettingsSuggestOutlinedIcon /></p>
+                            <p onClick={props.handleChangeBackgroundProp}>{props.name}</p>
                         </div>
                         <div className={Styles.automation_part}>
                             <p><BoltOutlinedIcon /></p>
