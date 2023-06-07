@@ -3,14 +3,16 @@ import {createSlice} from "@reduxjs/toolkit";
 const listSlice = createSlice({
     name:'listSlice',
     initialState:{
-        list:[]
+        List:[]
     },
     reducers:{
         addList:(state,action) => {
-            state.list.push(action.payload)
-            console.log("action called",action)
+            if(action.payload!== ''){
+            state.List.push(action.payload)
+            // console.log("action called",action)
+            }
         }
     }
 })
 export const {addList} = listSlice.actions;
-export default listSlice.reducer
+export default listSlice.reducer;

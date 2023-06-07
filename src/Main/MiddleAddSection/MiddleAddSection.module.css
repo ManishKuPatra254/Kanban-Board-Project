@@ -1,5 +1,166 @@
-.main_container {
+.Main_section {
     border: 1px solid red;
     width: 100%;
     height: 90vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 1rem;
+}
+
+.list_button {
+    height: 3rem;
+    width: 17rem;
+    color: black;
+    background-color:whitesmoke;
+    text-align: left;
+    padding: 0.5rem 1rem;
+    font-size: medium;
+    font-weight: bold;
+    border: none;
+    border-radius: 1rem;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+}
+
+.list_button :hover{
+    cursor: pointer;
+}
+
+.input_section {
+    width: 17rem;
+    background-color: whitesmoke;
+    text-align: left;
+    padding: 0.5rem ;
+    border: none;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.input_task {
+    border: 0.10rem solid rgb(17, 130, 236);
+    border-radius: 0.3rem;
+    padding: 0.3rem 0.6rem;
+    width: 90%;
+    font-size: medium;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.input_task:focus{
+    border: 0.15rem solid rgb(17, 130, 236);
+}
+
+.button_container {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+}
+
+.button {
+    background-color:  rgb(0, 118, 228) ;
+    color: white;
+    font-size: medium;
+    padding: 0.4rem 0.6rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: none;
+    border-radius: 0.2rem;
+}
+
+.button:hover{
+    cursor: pointer;
+}
+
+.close_button {
+    font-size: 1.7rem;
+    color:red;
+}
+
+.close_button {
+    cursor: pointer;
+}
+
+.map_container {
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    width: 16rem;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+
+.title_name {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: medium;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 1rem;
+    padding-left: 0.7rem;
+}
+
+.title_name :hover{
+    cursor: pointer;
+}
+
+.more_button {
+    border-radius: 0.3rem;
+    padding: 0.3rem 0.4rem;
+}
+
+.more_button:hover{
+    background-color: darkgray;
+}
+
+.card_button {
+    border: none;
+    font-size: medium;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: left;
+    background-color: transparent;
+    color: black;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.card_button:hover{
+    cursor: pointer;
+    background-color:darkgrey;
+}
+
+.addIcon {
+    font-size: 1.4rem;
+}
+
+.input_card{
+    border: 0.10rem solid rgb(17, 130, 236);
+    background-color: white;
+    border-radius: 0.3rem;
+    padding: 0.6rem 0.6rem 2rem 0.6rem;
+    width: 90%;
+    height: 0.3vh;
+    font-size: medium;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card_container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.card_name {
+    background-color: whitesmoke;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0.2rem 0.2rem 0.6rem grey;
+    margin: 0.5rem 0;
 }
