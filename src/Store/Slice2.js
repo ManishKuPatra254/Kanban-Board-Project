@@ -1,19 +1,19 @@
-import {createSlice} from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
-const cardSlice = createSlice ({
-    name:'cardSlice',
+
+const CardSlice = createSlice({
+    name:"card",
     initialState:{
         Card:[]
     },
     reducers:{
-        addCard:(state,action) =>{
+        addCard:(state,action)=>{
             if(action.payload!==''){
-                state.Card.push(action.payload)
-
+            state.Card.push(action.payload);
             }
-
         }
     }
-})
-export const {addCard} = cardSlice.actions;
-export default cardSlice.reducer;
+});
+
+export const { addCard } = CardSlice.actions;
+export default CardSlice.reducer;

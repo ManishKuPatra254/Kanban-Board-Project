@@ -1,50 +1,55 @@
-.Main_section {
-    border: 1px solid red;
-    width: 100%;
-    height: 90vh;
+.wrapper{
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
     gap: 1rem;
 }
 
-.list_button {
+.card{
+    list-style: none;
+}
+
+.deleteListItem{
+    cursor: pointer;
+}
+.cardss{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.listButton{
     height: 3rem;
     width: 17rem;
-    color: black;
-    background-color:whitesmoke;
+    color: white;
+    background-color: lightgray;
     text-align: left;
     padding: 0.5rem 1rem;
     font-size: medium;
-    font-weight: bold;
     border: none;
     border-radius: 1rem;
-    margin-top: 1rem;
-    margin-left: 1rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
 }
 
-.list_button :hover{
+.listButton:hover{
     cursor: pointer;
 }
 
-.input_section {
+.inputContainer{
     width: 17rem;
-    background-color: whitesmoke;
+    background-color: lightgrey;
     text-align: left;
     padding: 0.5rem ;
     border: none;
-    border-radius: 0.5rem;
-    margin-top: 1rem;
-    margin-left: 1rem;
+    border-radius: 1rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
 }
 
-.input_task {
-    border: 0.10rem solid rgb(17, 130, 236);
+.input{
+    border: 0.15rem solid rgb(17, 130, 236);
     border-radius: 0.3rem;
     padding: 0.3rem 0.6rem;
     width: 90%;
@@ -52,17 +57,17 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.input_task:focus{
+.input:focus{
     border: 0.15rem solid rgb(17, 130, 236);
 }
 
-.button_container {
+.buttonContainer{
     display: flex;
     align-items: center;
     gap: 0.7rem;
 }
 
-.button {
+.button{
     background-color:  rgb(0, 118, 228) ;
     color: white;
     font-size: medium;
@@ -76,27 +81,25 @@
     cursor: pointer;
 }
 
-.close_button {
+.close{
     font-size: 1.7rem;
-    color:red;
+    color: rgb(75, 73, 73);
 }
 
-.close_button {
+.close{
     cursor: pointer;
 }
 
-.map_container {
-    background-color: whitesmoke;
+.mapContainer{
+    background-color: lightgray;
     display: flex;
     flex-direction: column;
     width: 16rem;
-    border-radius: 0.5rem;
+    border-radius: 1rem;
     padding: 1rem;
-    margin-top: 1rem;
-    margin-left: 1rem;
 }
 
-.title_name {
+.title{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -106,59 +109,58 @@
     padding-left: 0.7rem;
 }
 
-.title_name :hover{
+.title:hover{
     cursor: pointer;
 }
 
-.more_button {
+.more{
     border-radius: 0.3rem;
     padding: 0.3rem 0.4rem;
 }
 
-.more_button:hover{
-    background-color: darkgray;
+.more:hover{
+    background-color: rgb(236, 213, 217);
 }
 
-.card_button {
+.cardButton{
     border: none;
     font-size: medium;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: left;
     background-color: transparent;
-    color: black;
+    color: rgb(89, 87, 87);
     display: flex;
     align-items: center;
     gap: 0.4rem;
 }
 
-.card_button:hover{
+.cardButton:hover{
     cursor: pointer;
-    background-color:darkgrey;
+    background-color:gray;
 }
 
-.addIcon {
+.addIcon{
     font-size: 1.4rem;
 }
 
-.input_card{
-    border: 0.10rem solid rgb(17, 130, 236);
-    background-color: white;
+.inputCard{
+    border: 0.15rem solid rgb(17, 130, 236);
+    background-color: lightgray;
     border-radius: 0.3rem;
     padding: 0.6rem 0.6rem 2rem 0.6rem;
     width: 90%;
-    height: 0.3vh;
     font-size: medium;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.card_container {
+.cardContainer{
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
 }
 
-.card_name {
-    background-color: whitesmoke;
+.card{
+    background-color: lightgray;
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
     box-shadow: 0.2rem 0.2rem 0.6rem grey;

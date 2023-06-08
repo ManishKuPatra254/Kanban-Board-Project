@@ -1,92 +1,149 @@
-import {Fragment,useState} from 'react';
-import style from './MiddleAddSection.module.css';
+import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { addTask, deleteTask, addList } from '../../Store/Slice';
 import { CgClose } from 'react-icons/cg';
 import { BiDotsHorizontalRounded } from 'react-icons/bi';
+import { AiFillDelete } from 'react-icons/ai';
 import { GrFormAdd } from 'react-icons/gr';
-import { addList } from '../../Store/Slice';
-import { addCard } from '../../Store/Slice2';
-import { useSelector,useDispatch } from 'react-redux';
+import styles from './MiddleAddSection.module.css';
+import { useNavigate } from 'react-router-dom';
 
-export function Addsection (){
+export function TodoList () {
+    const [isClick, setIsClick] = useState(false);
+    const [showAddCard, setShowAddCard] = useState(false);
+    const [task, setTask] = useState('');
+    const [list, setList] = useState('');
+    const dispatch = useDispatch();
+    const { Todo } = useSelector((state) => state.todo);
+    const navigate = useNavigate()
 
-  const[card,setCard]=useState("");
-  const[input,setInput]=useState("");
-  const[displayCard,setDisplayCard]=useState(false);
-  const[nowClick,setNowClick]=useState(false);
 
-  const dispatch=useDispatch();
-  const {List} = useSelector((state)=> state.listSlice);
-  const {Card} = useSelector((state)=>state.listCard);
-
-  const handleAdd = () =>{
-    dispatch(addList(input));
-    setInput('');
-  }
-
-  const handleAddcard = () =>{
-    dispatch(addCard(card));
-    setCard('');
-  }
-
-  const handleSubmitClick = (e) =>{
-    if(e.keyCode===13){
-      dispatch(addCard(card));
-      setCard('');
+    const handleAdd = () => {
+        dispatch(addTask({ myTask: task }));
+        setTask('');
     }
-  }
 
-  const handleSubmit = (e) =>{
-    if(e.keyCode===13){
-      dispatch(addList(input));
-      setCard('');
+    const handleAddCard = (taskId) => {
+        dispatch(addList({ taskId, list }));
+        setList('');
     }
-  }
 
-  return(
-    <Fragment>
-      <div className={style.Main_section}>
-        { List.map((title) => <div className={style.map_container} key={title}>
-          <div className={style.title_name}>
-            <span>{title}</span>
-            <span className={style.more_button}><BiDotsHorizontalRounded/></span>
-          </div>
-          {
-            Card.map((card) => <div className={style.card_name}>{card}</div>)
-          }
-          {
-            !displayCard ?
-            <button className={style.card_button} onClick={()=>{setDisplayCard(!displayCard)}}>
-              <GrFormAdd className={style.addIcon}/>
-              Add a card
-              </button>:
-              <div className={style.card_container}>
-                <input className={style.input_card}
-                placeholder='Enter a title for this card...' value={card}
-                onChange={(e)=> setCard(e.target.value)} onKeyDown={handleSubmitClick}
-                autoFocus/>
+    const handleEnterClick = (e, taskId) => {
+        if (e.keyCode === 13) {
+            handleAddCard(taskId);
+        }
+    }
 
-                <div className={style.button_container}>
-                  <button className={style.button} onClick={handleAddcard}>Add card</button>
-                  <CgClose className={style.close_button} onClick={() => {setDisplayCard(!displayCard)}}/>
+    const handleEnter = (e) => {
+        if (e.keyCode === 13) {
+            dispatch(addTask({ myTask: task }));
+            setTask('');
+        }
+    }
+
+    const deleteData = (id) => {
+        dispatch(deleteTask({ id }));
+    }
+
+    const deleteList = () => {
+        dispatch()
+    }
+
+    function handleDynamicRouting({key}){
+        navigate(`description/${key}`)
+       
+    }
+
+    return (
+        <div className={styles.wrapper}>
+            {Todo.map((title) => (
+                <div className={styles.mapContainer}>
+                    <div className={styles.title}>
+                        <span>{title.AddData}</span>
+                        <span className={styles.more} onClick={() => deleteData(title.id)}>
+                            <AiFillDelete />
+                        </span>
+                        <span className={styles.more}>
+                            <BiDotsHorizontalRounded />
+                        </span>
+                    </div>
+                    {title.TodoList.map((item) => (
+                        <li className={styles.card} key={item.id}>
+                            <div className={styles.cardss}>
+                                
+                               <p onClick={()=>handleDynamicRouting({key :item.id})}>{item.myList}</p> 
+                                <AiFillDelete className={styles.deleteListItem} onClick={()=>deleteList(item.id)} />
+                            </div>
+
+                        </li>
+
+                    ))}
+                    {!showAddCard ? (
+                        <button
+                            className={styles.cardButton}
+                            onClick={() => setShowAddCard(!showAddCard)}
+                        >
+                            <GrFormAdd className={styles.addIcon} />
+                            Add a card
+                        </button>
+                    ) : (
+                        <div className={styles.cardContainer}>
+                            <input
+                                className={styles.inputCard}
+                                placeholder="Enter a title for this card..."
+                                value={list}
+                                onChange={(e) => setList(e.target.value)}
+                                onKeyDown={(e) => handleEnterClick(e, title.id)}
+                                autoFocus
+                            />
+                            <div className={styles.buttonContainer}>
+                                <button className={styles.button} onClick={() => handleAddCard(title.id)}>Add card</button>
+                                <CgClose
+                                    className={styles.close}
+                                    onClick={() => {
+                                        setShowAddCard(!showAddCard);
+                                        setList('');
+                                    }}
+                                />
+                            </div>
+                        </div>
+                    )}
                 </div>
-              </div>
-          }
-        </div>)
-        }
-        {
-          !nowClick ?
-          <button className={style.list_button} onClick={()=>{setNowClick(!nowClick)}}>+ Add another list</button>:
-          <div className={style.input_section}>
-            <input className={style.input_task} type='text' placeholder='Enter list title...'
-            value={input} onChange={(e)=>setInput(e.target.value)} onKeyDown={handleSubmit}
-            autoFocus/>
-            <div className={style.button_container}>
-              <button className={style.button} onClick={handleAdd}>Add list</button>
-              <CgClose className={style.close_button} onClick={() => {setNowClick(!nowClick)}}/>
-            </div>
-          </div>
-        }
-      </div>
-    </Fragment>
-  )
+            ))}
+            {!isClick ? (
+                <button
+                    className={styles.listButton}
+                    onClick={() => {
+                        setIsClick(!isClick);
+                    }}
+                >
+                    + Add another list
+                </button>
+            ) : (
+                <div className={styles.inputContainer}>
+                    <input
+                        className={styles.input}
+                        type="text"
+                        placeholder="Enter list title..."
+                        value={task}
+                        onChange={(e) => setTask(e.target.value)}
+                        onKeyDown={handleEnter}
+                        autoFocus
+                    />
+                    <div className={styles.buttonContainer}>
+                        <button className={styles.button} onClick={handleAdd}>
+                            Add list
+                        </button>
+                        <CgClose
+                            className={styles.close}
+                            onClick={() => {
+                                setIsClick(!isClick);
+                                setTask('');
+                            }}
+                        />
+                    </div>
+                </div>
+            )}
+        </div>
+    );
 }
