@@ -1,13 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
-import todoReducer from './Slice';
-import cardReducer from './Slice2';
+import listSlice from './ListSlice';
 
-const store = configureStore({
+const store = configureStore ({
     reducer:{
-        todo: todoReducer,
-        card: cardReducer
+        listSlice:listSlice
     }
-});
-
+    
+})
 
 export default store;
