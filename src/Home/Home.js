@@ -2,6 +2,7 @@ import { Fragment, useState } from 'react'
 import Styles from './Home.module.css'
 import main from '../All Images/Images/back2.jpg'
 import { UpperNavBar } from '../Main/UpperNavBar/UpperNavBar'
+import { BodySection } from '../Main/MiddleAddSection/BodySection'
 import image7 from '../All Images/Images/backg1.jpg'
 import image2 from '../All Images/Images/backg2.jpg'
 import image3 from '../All Images/Images/backg3.jpg'
@@ -50,6 +51,8 @@ export function Home() {
                 />
              
 
+                <BodySection/>
+                
             </div>
         </Fragment>
     )
