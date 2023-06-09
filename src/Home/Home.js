@@ -2,7 +2,6 @@ import { Fragment, useState } from 'react'
 import Styles from './Home.module.css'
 import main from '../All Images/Images/back2.jpg'
 import { UpperNavBar } from '../Main/UpperNavBar/UpperNavBar'
-import {TodoList } from '../Main/MiddleAddSection/MiddleAddSection'
 import image7 from '../All Images/Images/backg1.jpg'
 import image2 from '../All Images/Images/backg2.jpg'
 import image3 from '../All Images/Images/backg3.jpg'
@@ -10,6 +9,9 @@ import image4 from '../All Images/Images/backg4.jpg'
 import image5 from '../All Images/Images/backg5.jpg'
 import image6 from '../All Images/Images/backg6.jpg'
 import image1 from '../All Images/Images/backg7.jpg'
+import image8 from '../All Images/Images/backg8.jpg'
+import image9 from '../All Images/Images/backg9.jpg'
+import image10 from '../All Images/Images/backg10.jpg'
 
 export function Home() {
 
@@ -24,6 +26,9 @@ export function Home() {
         image5,
         image6,
         image7,
+        image8,
+        image9,
+        image10,
     ]
 
     function handleChangeBackground() {
@@ -43,8 +48,8 @@ export function Home() {
                 <UpperNavBar name='Change Aura'
                     handleChangeBackgroundProp={handleChangeBackground}
                 />
-                <TodoList/>
-                
+             
+
             </div>
         </Fragment>
     )

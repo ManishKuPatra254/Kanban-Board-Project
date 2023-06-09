@@ -109,3 +109,28 @@ export function DescriptionPg() {
         </Fragment>
     )
 }
+
+
+
+// List =[
+//     {
+//         id: '001001',
+//         title: 'Board title',
+//         Cards: [
+//             id: '22r0h9i444t'
+//             title: 'Card Title',
+//             lables: [{
+//                 text: 'Urgent',
+//                 color: 'red'
+//             }],
+//             tasks: [
+//                 {
+//                     id: '696969',
+//                     title: 'Title 1'
+//                 }
+//             ],
+//             desc: 'Description',
+//             date: new Date()
+//         ]
+//     }
+// ]

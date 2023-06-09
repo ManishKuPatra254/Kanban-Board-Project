@@ -5,7 +5,7 @@ import StarIcon from '@mui/icons-material/Star';
 import PeopleAltOutlinedIcon from '@mui/icons-material/PeopleAltOutlined';
 import ViewStreamOutlinedIcon from '@mui/icons-material/ViewStreamOutlined';
 import SettingsSuggestOutlinedIcon from '@mui/icons-material/SettingsSuggestOutlined';
-import BoltOutlinedIcon from '@mui/icons-material/BoltOutlined';
+import SettingsAccessibilityOutlinedIcon from '@mui/icons-material/SettingsAccessibilityOutlined';
 import FilterListOutlinedIcon from '@mui/icons-material/FilterListOutlined';
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
@@ -14,6 +14,19 @@ import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
 import image from '../../All Images/Images/836-removebg-preview (1).png'
 import PersonAddAltOutlinedIcon from '@mui/icons-material/PersonAddAltOutlined';
+import Dialog from '@mui/material/Dialog';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
+import Slide from '@mui/material/Slide';
+import { forwardRef } from 'react';
+import toast, { Toaster } from 'react-hot-toast';
+
+
+
+const TransitionSlide = forwardRef(function TransitionSlide(props, ref) {
+    return <Slide direction="left" ref={ref} {...props} />;
+});
 
 export function UpperNavBar(props) {
 
@@ -39,6 +52,50 @@ export function UpperNavBar(props) {
         setAnchorEl(null)
     }
 
+    // ..........setting members of the page..........
+
+
+    const [open, setOpen] = useState(false);
+
+    function handleClickOpenDialog() {
+        setOpen(true);
+    };
+
+    function handleCloseDialog() {
+        setOpen(false);
+    };
+
+
+    // .........................................
+
+
+    const [todos, setTodos] = useState(["Inzamam Ull Azeez", "Manish Kumar Patra", "Aditya Verma"]);
+    const [storeDataMembers, setStoreDataMembers] = useState('');
+
+    function handleStoreDataRender(e) {
+        setStoreDataMembers(e.target.value);
+    }
+
+    function handleAddData() {
+        if (storeDataMembers !== '') {
+            setTodos([...todos, storeDataMembers]);
+            setStoreDataMembers("");
+            // toast.success('Congratulations Welcome New Member 😊')
+            toast.success('नया सदस्य बनने पर बधाई 🥳')
+        }
+        else {
+            toast.error('कृपया नाम दर्ज करें 😵')
+            // toast.error('Please Enter The Name🤕')
+
+        }
+    }
+
+
+    function handleDeleteData(indexes) {
+        const latestData = [...todos];
+        latestData.splice(indexes, 1)
+        setTodos(latestData)
+    }
 
 
 
@@ -83,13 +140,65 @@ export function UpperNavBar(props) {
                             <p onClick={props.handleChangeBackgroundProp}>{props.name}</p>
                         </div>
                         <div className={Styles.automation_part}>
-                            <p><BoltOutlinedIcon /></p>
-                            <p>Automation</p>
+                            <p onClick={handleClickOpenDialog}><SettingsAccessibilityOutlinedIcon /></p>
+                            <p onClick={handleClickOpenDialog}>All Members</p>
+                            <Dialog
+                                sx={{
+                                    display: 'flex',
+                                    justifyContent: 'flex-end',
+                                    alignItems: 'flex-end'
+
+                                }}
+
+                                open={open}
+                                TransitionComponent={TransitionSlide}
+                                keepMounted
+                                onClose={handleCloseDialog}
+                                aria-describedby="alert-dialog-slide-description">
+
+                                <DialogTitle sx={{
+                                    fontSize: '28px',
+                                    fontWeight: 'bold',
+                                    boxShadow: 'rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px',
+
+                                }}>Add Members</DialogTitle>
+                                <DialogContent sx={{
+                                    width: '400px',
+                                    height: '40vh',
+                                    '&::-webkit-scrollbar': { display: 'none' }
+                                }}>
+
+                                    <DialogContentText >
+
+                                        <input className={Styles.input_todo_data}
+                                            type="text"
+                                            onChange={handleStoreDataRender}
+                                            value={storeDataMembers}
+                                            placeholder='Enter the name' />
+
+                                        <button onClick={handleAddData} className={Styles.add_data_button}> Add Name
+                                            <Toaster />
+                                        </button>
+
+                                        {todos.map((item, indexes) => (
+
+                                            <span className={Styles.todo_list_map}
+                                                key={indexes}>
+                                                {item}
+                                                <button onClick={() => handleDeleteData(indexes)}>Delete Name</button>
+                                            </span>
+                                        ))}
+                                    </DialogContentText>
+                                </DialogContent>
+                            </Dialog>
                         </div>
+
+
                         <div className={Styles.filter_part}>
                             <p><FilterListOutlinedIcon /></p>
                             <p>Filters</p>
                         </div>
+
                         <Stack>
                             <Avatar alt='Group 15' src={image} />
                         </Stack>
@@ -98,6 +207,7 @@ export function UpperNavBar(props) {
                             <p><PersonAddAltOutlinedIcon /></p>
                             <p>Share</p>
                         </div>
+
                         <div className={Styles.side_options}>
                             <p>...</p>
                         </div>
@@ -106,6 +216,6 @@ export function UpperNavBar(props) {
                     </div>
                 </div>
             </div>
-        </Fragment>
+        </Fragment >
     )
 }
