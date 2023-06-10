@@ -1,0 +1,59 @@
+.addNew_button {
+    height: 4vh;
+    background-color: transparent;
+    display: flex;
+    justify-content: flex-start;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    align-items: center;
+    border: none;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 12px;
+    cursor: pointer;
+}
+
+.addNew_bc {
+    /* border: 5px solid rgb(204, 166, 166); */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.addNew_button2 {
+    background-color: rgb(255, 255, 255) !important;
+    padding: 10px 25px !important;
+    font-size: 14px;
+    color: rgb(0, 0, 0);
+    display: flex;
+    border: none;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: .2s ease-in-out;
+}
+
+.addNew_button2:hover {
+    transition: .2s ease-in-out;
+    background-color: rgb(38, 64, 113) !important;
+    color: aliceblue;
+}
+
+.addNew_input {
+    background-color: white;
+    outline: none;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    height: 6vh;
+    border-radius: 4px;
+    margin-top: 12px;
+    font-size: 14px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+}

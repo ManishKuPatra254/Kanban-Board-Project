@@ -1,0 +1,34 @@
+.list_container {
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.594);
+    height: fit-content;
+    width: 300px;
+    color: black;
+    padding: 10px;
+    margin: 50px 30px;
+    cursor: pointer;
+    transition: .2s ease-in-out;
+}
+
+.list_container:hover {
+    background-color: rgba(245, 245, 245, 0.801);
+    transition: .2s ease-in-out;
+}
+
+.list_value {
+    /* border: 1px solid darkblue; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-weight: bold;
+    padding: 5px 10px;
+
+}
+
+.list_more {
+    /* border: 1px solid darkblue; */
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+}

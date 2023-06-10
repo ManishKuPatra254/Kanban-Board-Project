@@ -1,9 +1,9 @@
 import React from 'react';
-import style from './BodySection.module.css';
-import {AddNewComp} from './AddNewComp';
+import style from './ListComp.module.css';
+import {AddNewComp} from '../AddNewList/AddNewComp';
 import { useSelector } from 'react-redux';
 import { BiDotsHorizontalRounded } from 'react-icons/bi';
-import { CardComp } from './CardComp';
+import { CardComp } from '../CardComp/CardComp';
 
 export function ListComp () {
 
@@ -11,7 +11,7 @@ export function ListComp () {
 
     return(
         <>
-        {listItem.length && listItem.map((list)=><div key={list.id} className={style.list_container}>
+        { listItem.map((list)=><div key={list.id} className={style.list_container}>
         <span className={style.list_value}>{list.title}</span>
         <span className={style.list_more}><BiDotsHorizontalRounded/></span>
 
@@ -26,7 +26,6 @@ export function ListComp () {
 
         <div className={style.list_container}>
             <AddNewComp/>
-
         </div>
         </>
     )
