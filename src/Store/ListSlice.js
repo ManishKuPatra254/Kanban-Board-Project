@@ -71,16 +71,21 @@ const listSlice = createSlice({
             const sourceListIndex = state.list.findIndex((list) => list.id === sourceListId);
             const destinationListIndex = state.list.findIndex((list) => list.id === destinationListId);
 
+
+            // if lists not found...
+
             if (sourceListIndex === -1 || destinationListIndex === -1) {
-                return; // Lists not found, handle the error or return early
+                return;
             }
 
             const sourceList = state.list[sourceListIndex];
             const destinationList = state.list[destinationListIndex];
+            
 
-            // Make sure the children array exists
+            // if children array not found,
+
             if (!sourceList.children || !destinationList.children) {
-                return; // Children array not found, handle the error or return early
+                return;
             }
 
             const draggedCard = sourceList.children.splice(sourceIndex, 1)[0];
