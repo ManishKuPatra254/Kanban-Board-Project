@@ -9,9 +9,10 @@ export function ListComp () {
 
     const listItem = useSelector((store)=>store.listSlice.list);
 
+
     return(
         <>
-        { listItem.map((list)=><div key={list.id} className={style.list_container}>
+         { listItem.map((list)=><div key={list.id} className={style.list_container}>
         <span className={style.list_value}>{list.title}</span>
         <span className={style.list_more}><BiDotsHorizontalRounded/></span>
 

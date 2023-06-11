@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import CloseIcon from '@mui/icons-material/Close';
 import AddIcon from '@mui/icons-material/Add';
 
+
 export function AddNewComp({ type, parentId }) {
 
     const [inputVal, setInputVal] = useState("");
