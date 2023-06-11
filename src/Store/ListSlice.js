@@ -63,10 +63,34 @@ const listSlice = createSlice({
             });
             state.list = tasks;
         },
+
+
+        updateListOrder: (state, action) => {
+            const { sourceListId, destinationListId, sourceIndex, destinationIndex } = action.payload;
+
+            const sourceListIndex = state.list.findIndex((list) => list.id === sourceListId);
+            const destinationListIndex = state.list.findIndex((list) => list.id === destinationListId);
+
+            if (sourceListIndex === -1 || destinationListIndex === -1) {
+                return; // Lists not found, handle the error or return early
+            }
+
+            const sourceList = state.list[sourceListIndex];
+            const destinationList = state.list[destinationListIndex];
+
+            // Make sure the children array exists
+            if (!sourceList.children || !destinationList.children) {
+                return; // Children array not found, handle the error or return early
+            }
+
+            const draggedCard = sourceList.children.splice(sourceIndex, 1)[0];
+            destinationList.children.splice(destinationIndex, 0, draggedCard);
+        }
+
     },
 })
 
-export const { addList, addCard, updateList, updateCard } = listSlice.actions;
+export const { addList, addCard, updateList, updateCard, updateListOrder } = listSlice.actions;
 export default listSlice.reducer;
 
 
