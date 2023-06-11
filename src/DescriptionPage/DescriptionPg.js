@@ -4,7 +4,6 @@ import TableRowsOutlinedIcon from '@mui/icons-material/TableRowsOutlined';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import SegmentRoundedIcon from '@mui/icons-material/SegmentRounded';
 import ListIcon from '@mui/icons-material/List';
-// import toast, { Toaster } from 'react-hot-toast';
 import Stack from '@mui/material/Stack';
 import Avatar from '@mui/material/Avatar';
 import image1 from '../All Images/Images/836-removebg-preview (1).png'
@@ -20,11 +19,8 @@ export function DescriptionPg() {
 
     const { id } = useParams()
     const listItem = useSelector((store) => store.listSlice.list);
-    // let tasks;
-    // for(let i=0;i<listItem.length;i++){
-    //  tasks = listItem[i].map((item) => item.children);
 
-    // }
+
     const tasks = listItem.map((item) => item.children);
     console.log(tasks);
     let taskUpdate;
@@ -86,7 +82,7 @@ export function DescriptionPg() {
                                 <button
                                     onClick={updateDataList}
                                 >Save</button>
-                                {/* <Toaster /> */}
+                              
                             </div>
 
                             <div className={styles.description_section}>
