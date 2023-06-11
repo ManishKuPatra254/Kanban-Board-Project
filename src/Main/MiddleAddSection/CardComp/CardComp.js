@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 // import listSlice from '../../../Store/ListSlice';
 
 
+
 export function CardComp({ cardInfo }) {
     const storeDataNavigate = useSelector((store) => store.listSlice.list);
     console.log(storeDataNavigate);
