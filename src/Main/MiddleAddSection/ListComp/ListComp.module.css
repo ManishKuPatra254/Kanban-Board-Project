@@ -11,7 +11,7 @@
 }
 
 .list_container:hover {
-    background-color: rgba(245, 245, 245, 0.801);
+    background-color: rgba(255, 255, 255, 0.842);
     transition: .2s ease-in-out;
 }
 
@@ -31,4 +31,36 @@
     justify-content: flex-end;
     align-items: flex-end;
 
+}
+
+.render_update_container {
+    /* border: 1px solid firebrick; */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.input_update_data {
+    border: none;
+    width: 70%;
+    height: 4.5vh;
+    padding: 10px 10px;
+    border-radius: 4px;
+}
+
+.button_update {
+    height: 4vh;
+    border: none;
+    padding: 3px 10px;
+    font-weight: bold;
+    background-color: darkblue;
+    color: whitesmoke;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.button_update:hover{
+    background-color: royalblue;
+    color: white;
 }

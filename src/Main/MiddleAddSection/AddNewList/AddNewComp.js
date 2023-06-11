@@ -18,6 +18,7 @@ export function AddNewComp({ type, parentId }) {
             dispatch(addCard({ id: Math.random(), title: inputVal, parentId: parentId }))
         } else {
             dispatch(addList({ id: Math.random(), title: inputVal }))
+
         }
         // console.log("inputVal",inputVal)
         hideForm();
@@ -40,6 +41,10 @@ export function AddNewComp({ type, parentId }) {
 
     // .........................
 
+    // function handleS() {
+    //     dispatch(updateCard({ id: Math.random(), title: inputVal }))
+    // }
+
 
     return (
         <div className={style.addNew_container}>
@@ -54,7 +59,11 @@ export function AddNewComp({ type, parentId }) {
                 <input className={style.addNew_input} value={inputVal}
                     onChange={updateInputVal}
                     placeholder={type ? "Enter card name" : "Enter list name"} />
+
+                {/* <button onClick={handleS}>submit</button> */}
+
                 <div className={style.addNew_bc}>
+
                     <button className={style.addNew_button2} onClick={submitHandler}>Add card</button>
                     <p className={style.add_close_button}><CloseIcon onClick={hideForm} /></p>
                 </div>

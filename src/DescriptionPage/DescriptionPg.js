@@ -4,54 +4,58 @@ import TableRowsOutlinedIcon from '@mui/icons-material/TableRowsOutlined';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import SegmentRoundedIcon from '@mui/icons-material/SegmentRounded';
 import ListIcon from '@mui/icons-material/List';
-import toast, { Toaster } from 'react-hot-toast';
 import Stack from '@mui/material/Stack';
 import Avatar from '@mui/material/Avatar';
 import image1 from '../All Images/Images/836-removebg-preview (1).png'
 import { useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { updateCard } from '../Store/ListSlice';
+import { useDispatch } from 'react-redux';
 
 export function DescriptionPg() {
+
+    const navigateToHome = useNavigate()
+
+    const { id } = useParams()
+    const listItem = useSelector((store) => store.listSlice.list);
+
+
+    const tasks = listItem.map((item) => item.children);
+    console.log(tasks);
+    let taskUpdate;
+    for (let i = 0; i < listItem.length; i++) {
+        let temptask;
+        temptask = tasks[i].find((task) => {
+            // console.log(task.id,id);
+            return task.id === Number(id)
+        });
+        if (temptask !== undefined) {
+            taskUpdate = temptask;
+            break;
+        }
+    }
+
+    console.log(taskUpdate)
+
+    const [displayName, setDisplayName] = useState(taskUpdate.title !== undefined ? taskUpdate.title : "");
+
+    const dispatch = useDispatch()
+
+    function updateDataList() {
+        const newUpdatedData = { id: id, title: displayName, parentId: taskUpdate.parentId }
+        dispatch(updateCard(newUpdatedData))
+        navigateToHome('/')
+    }
+
+    // ...............................................
+
 
     const [close, setClose] = useState(true)
 
     function handleClickCloseBar() {
         setClose(!close)
     }
-
-    // ..........................................
-
-
-    const [storeData, setStoreData] = useState('')
-
-
-    function handleChangeData(event) {
-        setStoreData(event.target.value)
-    }
-
-    function handleStoreData() {
-        const dataStoreLocal = JSON.parse(localStorage.getItem('name of the file')) || []
-        if (storeData === '') {
-            toast.error("Empty 🙂", {
-                style: {
-                    backgroundColor: 'black',
-                    color: 'white',
-                }
-            })
-        }
-        else {
-            dataStoreLocal.push(storeData)
-            localStorage.setItem('name of the file', JSON.stringify(dataStoreLocal))
-            toast.success('Sucessfully saved ✌️', {
-                style: {
-                    backgroundColor: 'rgb(255, 255, 204)',
-                    color: 'black',
-                }
-            });
-        }
-        setStoreData('');
-    }
-
-
 
     return (
         <Fragment>
@@ -65,14 +69,20 @@ export function DescriptionPg() {
 
                             <div className={styles.input_section_top}>
                                 <p><TableRowsOutlinedIcon /></p>
+
+                                {/* .............................. */}
+
                                 <input type="text" placeholder='Enter the name'
-                                    value={storeData} onChange={handleChangeData} />
+                                    value={displayName}
+                                    onChange={(event) => setDisplayName(event.target.value)}
+                                />
                             </div>
 
                             <div className={styles.btn1_save}>
-                                <button onClick={handleStoreData}
+                                <button
+                                    onClick={updateDataList}
                                 >Save</button>
-                                <Toaster />
+                              
                             </div>
 
                             <div className={styles.description_section}>
@@ -109,28 +119,3 @@ export function DescriptionPg() {
         </Fragment>
     )
 }
-
-
-
-// List =[
-//     {
-//         id: '001001',
-//         title: 'Board title',
-//         Cards: [
-//             id: '22r0h9i444t'
-//             title: 'Card Title',
-//             lables: [{
-//                 text: 'Urgent',
-//                 color: 'red'
-//             }],
-//             tasks: [
-//                 {
-//                     id: '696969',
-//                     title: 'Title 1'
-//                 }
-//             ],
-//             desc: 'Description',
-//             date: new Date()
-//         ]
-//     }
-// ]
