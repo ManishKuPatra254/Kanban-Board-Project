@@ -6,17 +6,17 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-   
+
     <div className="App">
 
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/task' element={<DescriptionPg />} />
+          <Route path='/task/:id' element={<DescriptionPg />} />
         </Routes>
       </BrowserRouter>
     </div>
-  
+
   );
 }
 
