@@ -1,70 +1,71 @@
-# Getting Started with Create React App
+# Project Overview ... 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The proposed project aims to develop a Kanban Board using the React Library to help students manage their tasks and assignments efficiently. The Kanban Board will be a visual tool that provides a clear picture of the status of each task by visualizing the workflow. 
 
-## Available Scripts
+The main goal of this project is to help individuals or teams organize their work , track progress and collaborate accordingly .
 
-In the project directory, you can run:
+# Features ... 
 
-### `npm start`
+We can create multiple boards to manage different projects or workflows. we can create, edit, and delete the cards in the column to show the tasks.
+Drag and drop cards across columns to update their status or progress.
+Also we can assign labels, dates, and many more features to cards for better experience.
+and lastly you can collaborate with team members by sharing boards and assigning tasks.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Create, edit, and delete tasks
+Move tasks between different columns using drag and drop
+Responsive design for optimal viewing on different devices
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Installation ... 
 
-### `npm test`
+To run Kanban Project Follow the steps ...
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone the repository
+2. Download all the dependencies (if not present)
+3. Go to VS code and click on terminal
+4. Run a command (npm start)
+5. See the result ✌️
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<h1> Requirements </h1>
+<ul>
+  <li>React-JS</li>
+   <li>React DnD</li>
+   <li>React Icons</li>
+   <li>React Router Dom</li>
+   <li>React Hot Toast</li>
+   <li>Material UI</li>
+   <li>Material UI Icons</li>
+</ul>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Screenshots ...
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<h3>Main Page UI</h3>
 
-### `npm run eject`
+![Screenshot 2023-06-10 233233](https://github.com/ManishKuPatra254/Kanban-Board-Project-Grp-15/assets/112771729/db5b4617-b732-4a7e-bc97-a7c63cff9392)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<h3>Add Card</h3>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+![Screenshot 2023-06-10 233344](https://github.com/ManishKuPatra254/Kanban-Board-Project-Grp-15/assets/112771729/05f06669-1e29-481c-b25f-b6474403dce3)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+<h3>Add Members </h3>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![Screenshot 2023-06-10 233400](https://github.com/ManishKuPatra254/Kanban-Board-Project-Grp-15/assets/112771729/405af677-770d-4993-bb8c-fa4ee8c95bfa)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+<h3>Change Background</h3>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+![Screenshot 2023-06-10 233433](https://github.com/ManishKuPatra254/Kanban-Board-Project-Grp-15/assets/112771729/25f45024-4726-4876-8bc1-1cad9975762b)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+<h3>Description Page</h3>
 
-### Making a Progressive Web App
+![Screenshot (852)](https://github.com/ManishKuPatra254/Kanban-Board-Project-Grp-15/assets/112771729/35b7c262-614f-4cde-b69a-e219a4572626)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+# Collaborators ... 
 
-### Advanced Configuration
+1. Inzamam Ull Azeez (https://github.com/Inzamamazeez)
+2. Manish Kumar Patra (https://github.com/ManishKuPatra254)
+3. Aditya Verma (https://github.com/Adiverma12527)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
